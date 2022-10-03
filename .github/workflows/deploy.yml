@@ -1,9 +1,8 @@
 name: Blank workflow
 on:
   push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
+    branches: 
+      - master
   workflow_dispatch:
 
 jobs:
@@ -20,5 +19,5 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           localDir: .
-          remoteDir: /home/container/
+          remoteDir: /
           dryRun: false
