@@ -21,3 +21,4 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           localDir: .
           remoteDir: /home/container/
+          dryRun: false
