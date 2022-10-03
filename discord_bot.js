@@ -2,10 +2,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 require('dotenv').config()
 
-const APPLICATION_ID = process.env.APPLICATION_ID 
-const TOKEN = process.env.TOKEN 
-const PUBLIC_KEY = process.env.PUBLIC_KEY || 'not set'
-const GUILD_ID = process.env.GUILD_ID 
+const APPLICATION_ID = process.env.clientId;
+const TOKEN = process.env.token;
+const PUBLIC_KEY = process.env.PUBLIC_KEY || 'not set';
+const GUILD_ID = process.env.guildId;
 
 const { Client, Collection, GatewayIntentBits, REST, Routes } = require('discord.js');
 
@@ -33,6 +33,10 @@ client.once('ready', () => {
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
+	console.log(`Command: ${interaction.commandName}`)
+	console.log(interaction);
+	console.log(interaction.options.getString('command'));
+
 	const command = client.commands.get(interaction.commandName);
 
 	if (!command) return;
@@ -45,11 +49,11 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.on('guildCreate', async guild => {
-    guild.commands
-        .set(commands)
-        .then(() => console.log(`Commands deployed to ${guild.name}`))
-})
+// client.on('guildCreate', async guild => {
+//     guild.commands
+//         .set(commands)
+//         .then(() => console.log(`Commands deployed to ${guild.name}`))
+// })
 
 console.log('Commands registered');
 
