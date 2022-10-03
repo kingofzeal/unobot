@@ -2,28 +2,17 @@
   "name": "slackbot-uno",
   "version": "0.0.1",
   "description": "",
-  "main": "node --harmony slack_bot.js",
+  "main": "discord_bot.js",
   "dependencies": {
-    "beepboop-botkit": "^1.4.1",
-    "beepboop-persist": "^0.1.0",
-    "bluebird": "^3.4.6",
-    "botkit-storage-redis": "^1.0.1",
-    "express": "^4.14.0",
-    "request": "^2.67.0",
-    "request-promise": "^4.1.1",
-    "slapp": "^1.2.0",
-    "slapp-context-beepboop": "^1.1.0",
-    "slapp-convo-beepboop": "^1.0.0",
-    "firebase-admin": "^5.9.1"
-  },
-  "devDependencies": {
-    "expect": "^1.20.2",
-    "nock": "^8.1.0",
-    "tap": "^10.3.2"
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "discord-interactions": "^3.2.0",
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1"
   },
   "scripts": {
-    "start": "node --harmony slack_bot.js",
-    "test": "tap --harmony spec/*.js --coverage"
+    "start": "node discord_bot.js"
   },
   "keywords": [
     "bots",
@@ -31,9 +20,6 @@
     "slack",
     "uno"
   ],
-  "engines": {
-    "node": "8.9.4"
-  },
   "license": "MIT",
   "repository": "git+https://github.com/SignetStudios/slackbot-uno"
 }

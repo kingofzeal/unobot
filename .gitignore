@@ -7,3 +7,4 @@ db/
 .env
 
 \.nyc_output/
+.env
